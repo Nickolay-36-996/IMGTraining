@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 130px;
+}
+
+.img__main {
+    max-width: 600px;
+    box-shadow: 0px -1px 11px 11px rgba(34, 60, 80, 0.2);;
+}
+
+.img__add {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.img {
+    max-width: 160px;
+    height: 100%;
+}
+
+.img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px -1px 11px 5px rgba(34, 60, 80, 0.2);
+}
