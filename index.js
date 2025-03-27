@@ -38,12 +38,32 @@ const imgAdd = document.querySelector(".img__add");
 const widthAllElements =
   img[0].clientWidth * img.length + 20 * (img.length - 1);
 
+const vectorLeft = document.querySelector(".vector__left");
+const vectorRight = document.querySelector(".vector__right");
+let saveTranslate = 0;
 
-const vectorLeft = document.querySelector('.vector__left');
-const vectorRight = document.querySelector('.vector__right')
-vectorLeft.addEventListener('click', function (event) {
-    imgAdd.style.transform = `translateX(0px)`
-})
-vectorRight.addEventListener('click', function (event) {
-    imgAdd.style.transform = `translateX(-880px)`
-})
+
+vectorLeft.addEventListener("click", function (event) {
+  console.log(saveTranslate);
+  console.log(saveTranslate <= widthAllElements)
+  if (saveTranslate >= 0) {
+    saveTranslate = 0
+  }
+  else {
+    saveTranslate += (img[0].clientWidth + 20) * 5;
+    imgAdd.style.transform = `translateX(${saveTranslate}px)`;
+  }
+});
+
+
+vectorRight.addEventListener("click", function (event) {
+  // saveTranslate -= img[0].clientWidth + 20;
+  console.log(saveTranslate)
+  console.log(saveTranslate <= -widthAllElements)
+  // imgAdd.style.transform = `translateX(${saveTranslate}px)`;
+  if (saveTranslate <= (-widthAllElements + (img[0].clientWidth +20) * 5)) {}
+  else {
+    saveTranslate -= (img[0].clientWidth + 20) * 5;
+    imgAdd.style.transform = `translateX(${saveTranslate}px)`;
+  }
+});
